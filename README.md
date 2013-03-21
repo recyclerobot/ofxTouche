@@ -1,13 +1,11 @@
 ofxTouche
 =========
 
-openframeworks conversion from
-http://www.instructables.com/id/Touche-for-Arduino-Advanced-touch-sensing/
+openframeworks conversion from  
+http://www.instructables.com/id/Touche-for-Arduino-Advanced-touch-sensing/ 
  
-made at resonate.io 2013
-by Brett Renfer
-   Bjorn Staal
-   Thijs Bernolet
+made at resonate.io 2013 by Brett Renfer, Bjorn Staal, Thijs Bernolet  
+
 
 
 Example:
