@@ -1,3 +1,4 @@
 *.app
 xcuserdata
 *.xcuserdatad
+*.xcworkspace
