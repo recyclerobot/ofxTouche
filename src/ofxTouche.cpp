@@ -9,14 +9,18 @@
 //    Bjorn Staal
 //    Thijs Bernolet
 
-// --------------------------------------------------------------------------
-
 #include "ofxTouche.h"
 
+//------------------------------------------
+ofxTouche::~ofxTouche(){
+    stopThread();
+    serial.close();
+}
+
+//------------------------------------------
 bool ofxTouche::setup( string name ){
     
     // search for available arduino serial port
-    bStartedUnpacking = false;
     
     vector <ofSerialDeviceInfo> info = serial.getDeviceList();
     
@@ -39,26 +43,48 @@ bool ofxTouche::setup( string name ){
     return bSetup;
 }
 
-void ofxTouche::draw( int x, int y, int width, int height ){
+//------------------------------------------
+void ofxTouche::draw( int x, int y, int width, int height, ofColor color ){
     if ( currentTimeReads.size() == 0) return;
     
+    ofPushMatrix();
+    ofTranslate(x, y);
     ofPushStyle();
     ofNoFill();
     ofBeginShape();
-    
-    static float yMax     = height;
-    static float yMin     = 0;
+    ofSetColor(color);
     
     for ( int i=1; i<currentReads.size(); i++){
         
-        ofCurveVertex( x+((float) ( currentTimeReads[i]-currentTimeReads[0])/(currentTimeReads[currentTimeReads.size()-1]-currentTimeReads[0])*width),
-                      y + height-( (float) currentReads[i]/(yMax-yMin)*height)+(yMin)/(yMax-yMin)*height);
-      }
-      
+        ofCurveVertex( (float) ( currentTimeReads[i]-currentTimeReads[0])/(currentTimeReads[currentTimeReads.size()-1]-currentTimeReads[0])*width,
+                      height- (float) currentReads[i]/maxRead*height );
+    }
+    
+    ofVec2f max = getPeak();
     ofEndShape();
+    
+    ofSetColor(255,0,0);
+    ofCircle((float) ( max.x-currentTimeReads[0])/(currentTimeReads[currentTimeReads.size()-1]-currentTimeReads[0])*width, height- (float) max.y/maxRead*height, 20);
+      
     ofPopStyle();
+    ofPopMatrix();
 }
 
+
+//------------------------------------------
+ofVec2f ofxTouche::getPeak(){
+    if ( currentReads.size() == 0 ){
+        return ofPoint(0,0);
+    }
+    
+    // uses the ever-amazing std::max_element to find the peak
+    vector<int>::iterator it = max_element(currentReads.begin(), currentReads.end());
+    
+    // the * is getting the reference from the iterator, aka the int value
+    return ofVec2f( it - currentReads.begin(), *it);
+}
+
+//------------------------------------------
 void ofxTouche::threadedFunction(){
     while( isThreadRunning() ){
         
