@@ -9,7 +9,7 @@
 		<string>42</string>
 		<key>objects</key>
 		<dict>
-			<key>ae2674b96af9f13292c8ec1a0786a1d4</key>
+			<key>82c20db0894dde6e8b8442fb32a9d0df</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -20,18 +20,45 @@
 				<key>name</key>
 				<string>ofxTouche.h</string>
 				<key>path</key>
-				<string>src/ofxTouche.h</string>
+				<string>../../../addons/ofxTouche/src/ofxTouche.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>51475959dc58e638ee9fee5ac8b3059f</key>
+			<key>4a81f54d97963a2f777eb7b7fd07db38</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>8dcd788bbdfd7a1aa8f926f4c10bcd2d</string>
+					<string>82c20db0894dde6e8b8442fb32a9d0df</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>src</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>e2638577187d54a5f91fa3b21d61a913</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>4a81f54d97963a2f777eb7b7fd07db38</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>ofxTouche</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>2e334310ab6a2f2d5322b4849e3141e1</key>
 			<dict>
 				<key>fileRef</key>
-				<string>17d24e07d91e4ba3368de99585f70e65</string>
+				<string>8dcd788bbdfd7a1aa8f926f4c10bcd2d</string>
 				<key>isa</key>
 				<string>PBXBuildFile</string>
 			</dict>
-			<key>17d24e07d91e4ba3368de99585f70e65</key>
+			<key>8dcd788bbdfd7a1aa8f926f4c10bcd2d</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.cpp.cpp</string>
@@ -42,14 +69,16 @@
 				<key>name</key>
 				<string>ofxTouche.cpp</string>
 				<key>path</key>
-				<string>src/ofxTouche.cpp</string>
+				<string>../../../addons/ofxTouche/src/ofxTouche.cpp</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
 			<key>BB4B014C10F69532006C3DED</key>
 			<dict>
 				<key>children</key>
-				<array />
+				<array>
+					<string>e2638577187d54a5f91fa3b21d61a913</string>
+				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
 				<key>name</key>
@@ -452,6 +481,8 @@
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>../../../addons/ofxTouche/libs</string>
+						<string>../../../addons/ofxTouche/src</string>
 					</array>
 					<key>ARCHS</key>
 					<string>$(NATIVE_ARCH)</string>
@@ -509,6 +540,8 @@
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>../../../addons/ofxTouche/libs</string>
+						<string>../../../addons/ofxTouche/src</string>
 					</array>
 					<key>ARCHS</key>
 					<string>$(NATIVE_ARCH)</string>
@@ -566,7 +599,7 @@
 				<array>
 					<string>E4B69E200A3A1BDC003C02F2</string>
 					<string>E4B69E210A3A1BDC003C02F2</string>
-					<string>51475959dc58e638ee9fee5ac8b3059f</string>
+					<string>2e334310ab6a2f2d5322b4849e3141e1</string>
 				</array>
 				<key>isa</key>
 				<string>PBXSourcesBuildPhase</string>
@@ -622,7 +655,7 @@
 				<key>isa</key>
 				<string>PBXNativeTarget</string>
 				<key>name</key>
-				<string>toucheOpenSource</string>
+				<string>example</string>
 				<key>productName</key>
 				<string>myOFApp</string>
 				<key>productReference</key>
@@ -639,7 +672,7 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>path</key>
-				<string>toucheOpenSourceDebug.app</string>
+				<string>exampleDebug.app</string>
 				<key>sourceTree</key>
 				<string>BUILT_PRODUCTS_DIR</string>
 			</dict>
@@ -874,8 +907,6 @@
 					<string>E4B69E1D0A3A1BDC003C02F2</string>
 					<string>E4B69E1E0A3A1BDC003C02F2</string>
 					<string>E4B69E1F0A3A1BDC003C02F2</string>
-					<string>17d24e07d91e4ba3368de99585f70e65</string>
-					<string>ae2674b96af9f13292c8ec1a0786a1d4</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>

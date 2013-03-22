@@ -27,8 +27,6 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    ofBackground(0);
-    ofSetColor(255);
     touche.draw(20, 20, 600, 600);
 }
 
